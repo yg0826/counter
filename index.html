@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"
+  ></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    function MinutesToHours() {
+      const [minutes, setMinutes] = React.useState(0);
+      const [flipped, setFlipped] = React.useState(false);
+      const [inverted, setInverted] = React.useState(false);
+      const onChange = (event) => {
+        setMinutes(event.target.value);
+      };
+      const reset = () => setMinutes(0);
+      const onFlip = () => setFlipped((current) => !current);
+      const onInvert = () => setInverted((current) => !current);
+
+      return (
+        <div>
+          <div>
+            <label id="M" HTMLfor="minutes">
+              Minutes
+            </label>
+            <input
+              value={flipped ? minutes * 60 : minutes}
+              id="minutes"
+              placeholder="Minutes"
+              type="number"
+              onChange={onChange}
+              disabled={flipped}
+              disabled={inverted}
+            />
+          </div>
+
+          <div>
+            <label id="H" HTMLfor="hours">
+              Hours
+            </label>
+            <input
+              id="hours"
+              placeholder="Hours"
+              type="number"
+              onchange={onChange}
+              value={flipped ? minutes : Math.round(minutes / 60)}
+              diabled={!flipped}
+              disabled={!inverted}
+            />
+          </div>
+
+          <div id="buttons">
+            <button id="btn1" onClick={reset}>
+              Reset
+            </button>
+            <button id="btn2" onClick={onFlip}>
+              Flip
+            </button>
+            <button id="btn3" onClick={onInvert}>
+              {inverted ? "turn back" : "invert"}
+            </button>
+          </div>
+        </div>
+      );
+    }
+    function CmToM() {
+      const [Cm, setCm] = React.useState(0);
+      const [flipped, setFlipped] = React.useState(false);
+      const [inverted, setInverted] = React.useState(false);
+      const onChange = (event) => {
+        setCm(event.target.value);
+      };
+      const reset = () => setCm(0);
+      const onFlip = () => setFlipped((current) => !current);
+      const onInvert = () => setInverted((current) => !current);
+
+      return (
+        <div>
+          <div>
+            <label id="Cm" HTMLfor="Cm">
+              Cm
+            </label>
+            <input
+              value={flipped ? Cm * 100 : Cm}
+              id="Cmbox"
+              placeholder="Cm"
+              type="number"
+              onChange={onChange}
+              disabled={flipped}
+              disabled={inverted}
+            />
+          </div>
+
+          <div>
+            <label id="Meter" HTMLfor="M">
+              M
+            </label>
+            <input
+              id="Mbox"
+              placeholder="M"
+              type="number"
+              onchange={onChange}
+              value={flipped ? Cm : Cm / 100}
+              diabled={!flipped}
+              disabled={!inverted}
+            />
+          </div>
+
+          <div id="BUTTONS">
+            <button id="BTN1" onClick={reset}>
+              Reset
+            </button>
+            <button id="BTN2" onClick={onFlip}>
+              Flip
+            </button>
+            <button id="BTN3" onClick={onInvert}>
+              {inverted ? "turn back" : "invert"}
+            </button>
+          </div>
+        </div>
+      );
+    }
+    function App() {
+      const [index, onIndex] = React.useState("0");
+      const onSelect = (event) => onIndex(event.target.value);
+
+      return (
+        <div>
+          <h1 id="converter">Super Converter</h1>
+          <div>
+            <select id="selector" value={index} onChange={onSelect}>
+              <option value="0">Select Your Unit</option>
+              <option value="1">Minutes & Hours</option>
+              <option value="2">Centimeter & Meter</option>
+            </select>
+            {index === "0" ? "" : ""}
+            {index === "1" ? <MinutesToHours /> : ""}
+            {index === "2" ? <CmToM /> : ""}
+          </div>
+        </div>
+      );
+    }
+
+    const root = document.getElementById("root");
+    ReactDOM.render(<App />, root);
+  </script>
+</html>

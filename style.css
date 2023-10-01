@@ -1,0 +1,134 @@
+* {
+  margin: 20;
+  padding: 0;
+  font-size: 15px;
+  font-family: Geneva, "Lucida Sans", Verdana, sans-serif;
+  box-sizing: border-box;
+  color: green;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  height: 100vh;
+}
+
+#converter {
+  text-align: center;
+  font-size: 60px;
+  margin-bottom: 80px;
+  color: greenyellow;
+  -webkit-text-stroke: 1px green;
+}
+
+#selector {
+  margin-top: 10px;
+  margin-bottom: 60px;
+  color: green;
+  font-weight: bold;
+  text-align: center;
+  height: 40px;
+  width: 100%;
+  border: 2px solid greenyellow;
+}
+
+#selector:hover {
+  background-color: beige;
+  color: green;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+#minutes {
+  font-size: 25px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+#M {
+  font-size: 30px;
+}
+
+#hours {
+  font-size: 25px;
+  margin-left: 48px;
+}
+
+#H {
+  font-size: 30px;
+}
+
+#buttons {
+  margin-top: 20px;
+}
+
+#btn1 {
+  padding: 5px;
+  margin-right: 10px;
+  background-color: white;
+  border-color: greenyellow;
+  border-radius: 10px;
+}
+
+#btn2 {
+  padding: 5px;
+  margin-right: 10px;
+  background-color: white;
+  border-color: greenyellow;
+  border-radius: 10px;
+}
+
+#btn3 {
+  padding: 5px;
+  background-color: white;
+  border-color: greenyellow;
+  border-radius: 10px;
+}
+
+#Cm {
+  font-size: 30px;
+}
+
+#Cmbox {
+  font-size: 25px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+#Meter {
+  font-size: 30px;
+}
+
+#Mbox {
+  font-size: 25px;
+  margin-left: 42px;
+}
+
+#BTN1 {
+  padding: 5px;
+  margin-right: 10px;
+  background-color: white;
+  border-color: greenyellow;
+  border-radius: 10px;
+}
+
+#BTN2 {
+  padding: 5px;
+  margin-right: 10px;
+  background-color: white;
+  border-color: greenyellow;
+  border-radius: 10px;
+}
+
+#BTN3 {
+  padding: 5px;
+  margin-right: 10px;
+  background-color: white;
+  border-color: greenyellow;
+  border-radius: 10px;
+}
+
+#BUTTONS {
+  margin-top: 20px;
+}
